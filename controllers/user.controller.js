@@ -22,3 +22,22 @@ module.exports.saveSingleUser = (req, res, next) => {
   fs.writeFileSync("./util/list.json", JSON.stringify(allUsers));
   res.status(200).send("Data Saved");
 };
+
+module.exports.updateSingleUser = (req, res, next) => {
+  const data = req.body;
+  const userId = Number(data?.id) - 1;
+  if (userId) {
+    console.log(allUsers[userId]);
+    if (data.name) {
+      allUsers[userId].name = data.name;
+    } else if (data.address) {
+      allUsers[userId].address = data.address;
+    } else if (data.description) {
+      allUsers[userId].description = data.description;
+    }
+    res.send("Updated");
+  } else {
+    res.send("user Not Found");
+  }
+  console.log(req.body);
+};

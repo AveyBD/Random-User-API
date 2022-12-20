@@ -3,8 +3,8 @@ const {
   randomUsers,
   allUser,
   saveSingleUser,
+  updateSingleUser,
 } = require("../../controllers/user.controller");
-
 
 const userRouter = express.Router();
 
@@ -15,6 +15,7 @@ userRouter.route("/").get((req, res) => {
 userRouter.route("/random").get(randomUsers);
 userRouter.route("/all").get(allUser);
 userRouter.route("/save").post(saveSingleUser);
+userRouter.route("/update").patch(updateSingleUser);
 module.exports = userRouter;
 /**
  * @swagger
