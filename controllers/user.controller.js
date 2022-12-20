@@ -5,5 +5,10 @@ module.exports.randomUsers = (req, res, next) => {
 };
 module.exports.allUser = (req, res, next) => {
   console.log("All user requested");
-  res.send(allUsers);
+  if (req.query?.limit >= 1) {
+    console.log(req.query.limit);
+    res.send(allUsers.slice(0, Number(req.query.limit)));
+  } else {
+    res.send(allUsers);
+  }
 };

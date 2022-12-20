@@ -24,17 +24,25 @@ const swaggerDefinition = {
       name: "Licensed Under MIT",
       url: "https://spdx.org/licenses/MIT.html",
     },
+    contact: {
+      name: "Git Repository",
+      url: "https://github.com/AveyBD/Random-User-API/",
+    },
   },
   servers: [
     {
       url: "http://localhost:5000",
       description: "Development server",
     },
+    {
+      url: "https://random-user.up.railway.app/",
+      description: "Live server",
+    },
   ],
 };
 const options = {
   swaggerDefinition,
-  apis: ["./routes/*.js"],
+  apis: ["./routes/*/*.js"],
 };
 const swaggerSpec = swaggerJSDoc(options);
 app.use("/user", userRouter);
