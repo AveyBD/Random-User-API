@@ -1,3 +1,4 @@
+const fs = require("fs");
 const allUsers = require("../util/list.json");
 module.exports.randomUsers = (req, res, next) => {
   console.warn("Random User's Information Requested");
@@ -11,4 +12,13 @@ module.exports.allUser = (req, res, next) => {
   } else {
     res.send(allUsers);
   }
+};
+
+module.exports.saveSingleUser = (req, res, next) => {
+  console.log("Got Post Request!");
+  var data = req.body;
+  data.id = allUsers.length + 1;
+  allUsers.push(data);
+  fs.writeFileSync("./util/list.json", JSON.stringify(allUsers));
+  res.status(200).send("Data Saved");
 };

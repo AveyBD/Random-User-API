@@ -1,5 +1,11 @@
 const express = require("express");
-const { randomUsers, allUser } = require("../../controllers/user.controller");
+const {
+  randomUsers,
+  allUser,
+  saveSingleUser,
+} = require("../../controllers/user.controller");
+
+
 const userRouter = express.Router();
 
 userRouter.route("/").get((req, res) => {
@@ -8,6 +14,7 @@ userRouter.route("/").get((req, res) => {
 
 userRouter.route("/random").get(randomUsers);
 userRouter.route("/all").get(allUser);
+userRouter.route("/save").post(saveSingleUser);
 module.exports = userRouter;
 /**
  * @swagger
