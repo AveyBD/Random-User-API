@@ -43,7 +43,7 @@ app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 404 Route
 app.all("*", (req, res) => {
-  res.status(404).send("Requested Route Not Found");
+  res.status(404).sendFile(__dirname + "./public/error.html");
 });
 
 // app start
