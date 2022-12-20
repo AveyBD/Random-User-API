@@ -3,6 +3,7 @@ const cors = require("cors");
 const { hitCheck } = require("./middleware/hitCheck");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const userRouter = require("./routes/v1/user.route");
 
 require("dotenv").config();
 const app = express();
@@ -36,7 +37,7 @@ const options = {
   apis: ["./routes/*.js"],
 };
 const swaggerSpec = swaggerJSDoc(options);
-
+app.use("/user", userRouter);
 // default route
 app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

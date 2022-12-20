@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Halum Bhai",
+        "address": "Sundarban",
+        "description": "Halum Bhai is a bagh"
+    },
+    {
+        "id": 2,
+        "name": "Meaw Bhai",
+        "address": "Barite",
+        "description": "Meaw Bhai is a bilai"
+    },
+    {
+        "id": 3,
+        "name": "Ghew Bhai",
+        "address": "Barite",
+        "description": "Meaw Bhai is a doggo"
+    },
+    {
+        "id": 4,
+        "name": "Pangas Bhai",
+        "address": "Nodi",
+        "description": "Meaw Bhai is a Mach"
+    },
+    {
+        "id": 5,
+        "name": "Pakhi Bhai",
+        "address": "Gach",
+        "description": "Meaw Bhai is a Pakhi"
+    }
+]
