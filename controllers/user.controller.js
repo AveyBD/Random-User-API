@@ -42,3 +42,19 @@ module.exports.updateSingleUser = (req, res, next) => {
   }
   console.log(req.body);
 };
+
+module.exports.deleteUser = (req, res, next) => {
+  const data = req.body;
+  const userId = data?.id;
+  console.log(userId);
+  if (userId > 0 && userId < allUsers.length) {
+    for (var i = 0; i < allUsers.length; i++) {
+      if (allUsers[i] === userId) {
+        allUsers.splice(i, 1);
+      }
+    }
+    res.status(200).send("Hello");
+  } else {
+    res.send("User Not Found");
+  }
+};

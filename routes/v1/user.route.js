@@ -4,6 +4,7 @@ const {
   allUser,
   saveSingleUser,
   updateSingleUser,
+  deleteUser,
 } = require("../../controllers/user.controller");
 
 const userRouter = express.Router();
@@ -16,6 +17,7 @@ userRouter.route("/random").get(randomUsers);
 userRouter.route("/all").get(allUser);
 userRouter.route("/save").post(saveSingleUser);
 userRouter.route("/update").patch(updateSingleUser);
+userRouter.route("/delete").delete(deleteUser);
 module.exports = userRouter;
 /**
  * @swagger
