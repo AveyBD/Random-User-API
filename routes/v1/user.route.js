@@ -100,3 +100,79 @@ module.exports = userRouter;
  *                         description: The user's description.
  *                         example: Halum Bhai is a bagh
  */
+/**
+ * 
+ * @swagger
+ * /user/save:
+ *   post:
+ *     summary: Creates a new user.
+ *     tags:
+ *     - User API
+ *     description: Add a new user. 
+ *     consumes:
+ *        - application/json
+ *     parameters:
+ *      - in: body
+ *        name: user
+ *        description: Name of the user
+ *        schema:
+ *          type: object
+ *          required: 
+ *              - name
+ *          properties: 
+ *            name:
+ *                type: string
+ *            gender:
+ *                type: string
+ *            email:
+ *                type: string
+ *            address:
+ *                type: string
+ *            description:
+ *                type: string
+ *            photoUrl:
+ *                type: string
+ *     responses:
+ *       200:
+ *         description: Success Response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: string
+
+ */
+/**
+ * @swagger
+ * /user/update:
+ *   patch:
+ *     summary: Update details of a user.
+ *     tags:
+ *     - User API
+ *     description: Update details of a user using userID
+ *     parameters:
+ *      - in: body
+ *        name: user
+ *        schema:
+ *          type: object
+ *          required:
+ *              - id
+ *          properties:
+ *            id:
+ *                type: integer
+ *            name:
+ *                type: string
+ *            gender:
+ *                type: string
+ *            email:
+ *                type: string
+ *            address:
+ *                type: string
+ *            description:
+ *                type: string
+ *            photoUrl:
+ *                type: string
+ *        description: Details of user.
+ *     responses:
+ *       200:
+ *         description: Update Response.
+ */

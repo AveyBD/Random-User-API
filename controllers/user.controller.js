@@ -16,6 +16,7 @@ module.exports.allUser = (req, res, next) => {
 
 module.exports.saveSingleUser = (req, res, next) => {
   console.log("Got Post Request!");
+  console.log(req.body);
   var data = req.body;
   data.id = allUsers.length + 1;
   allUsers.push(data);
